@@ -35,7 +35,12 @@ def buyLotsOfFruit(orderList):
     Returns cost of order
     """
     totalCost = 0.0
-    "*** YOUR CODE HERE ***"
+    for fruit, numPounds in orderList:
+        if fruit in fruitPrices:
+            cost = fruitPrices[fruit] * numPounds
+            totalCost += cost 
+        else:
+            raise ValueError("Unknown fruit: " + fruit)
     return totalCost
 
 
